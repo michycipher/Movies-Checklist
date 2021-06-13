@@ -1,0 +1,137 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Dancing Script', cursive;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right,#A6BB3A,#D4E09B,#6E7D26);
+}
+
+.list {
+  position: relative;
+  background-color: #fff;
+  width: 480px;
+}
+.list:hover {
+  box-shadow: 5px 5px 40px 4px #444;
+}
+.list h2 {
+  background-color: #F19C79;
+  color: #fff;
+  padding: 10px 20px;
+letter-spacing: 2px;
+text-align: center;
+}
+
+.list ul {
+  position: relative;
+  padding: 20px;
+}
+
+.list ul li {
+  position: relative;
+  list-style-type: none;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.list ul li:last-child {
+  border: none;
+}
+
+.list ul li label {
+  position:relative;
+  display: flex;
+  cursor: pointer;
+  justify-content: space-between;
+  align-content: center;
+}
+input {
+  opacity: 0;
+  visibility: collapse;
+  appearance: none;
+
+}
+
+p {
+  position: absolute;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+span {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ .list ul li label span::before{
+  content:'';
+  position: absolute;
+  top:5px;
+  width:15px;
+  height:10px;
+  border-left:2px solid #ccc;
+  border-bottom:2px solid #ccc;
+  transform: rotate(-40deg);
+  -webkit-transform: rotate(-40deg);
+}
+.list ul label input:checked ~ p{
+  text-decoration: line-through;
+  color: #F19C79;
+  font-weight: 300;
+}
+
+.list ul label input:checked ~ span{
+  border: 1px solid #03a9f4;
+  background-color: #03a9f4;
+}
+
+.list ul label input:checked ~ span::before{
+  border-left: 2px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+
+/*  SUBMIT BTN*/
+.submit-btn {
+font-family: Verdana, Geneva, Tahoma, sans-serif, cursive;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right,#A6BB3A,#D4E09B,#6E7D26);
+/* border: 2px solid; */
+}
+
+.submit-btn a{
+  text-decoration: none;
+  border: 2px solid;
+  border-radius: 15px ;
+  padding: 10px 20px;
+  margin-bottom: 25px;
+  color: #444;
+  background-color: #D4E09B;
+}
+
+.submit-btn a:hover {
+  /* box-shadow: 10px 10px 5px 0px #444; */
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  border: transparent;
+}
+
+@media only screen and (max-width: 767px) {
+  /* For mobile phones: */
+  [class*="list"] {
+    width: 80%;
+  }
+}
